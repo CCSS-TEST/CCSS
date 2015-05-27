@@ -35,7 +35,7 @@ Right now, you have a fork of the FOE repository, but you don't have the files i
 
      ![enter image description here](https://help.github.com/assets/images/help/repository/clone-repo-clone-url-button.png)
      
- 3. 	Open Terminal and go to the folder that you want to save the files
+ 3. 3. Open Terminal and go to the folder that you want to save the files
  4.   Type git clone and then paste the URL you copied in Step 2. It will look like this
 <pre>$ git clone https://github.com/YOUR-USERNAME/FOE</pre>
  5.  Press Enter. Your local clone will be created 
