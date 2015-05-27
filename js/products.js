@@ -14,7 +14,7 @@ function getProducts(view){
 	$('#products .products ul').html("<div class='refreshing_list'><i class='fa fa-spinner fa-spin'></i> </div>");
 	if(pinPolicy==1){$('#pin').show();}
 	$()
-		$.post('http://'+IP+':8089/appriz/getProductsByClient',{"idSecretClient": idScretClient,"entityName": $('#entities li[entityId='+currentEntityID+']').find('img').attr("alt"),"view":view,},function(data){
+		$.post('http://'+IP+':8089/appriz/getProductsByClient',{"idSecretClient": idScretClient},function(data){
 			console.log(JSON.stringify(data));
 			
 			if (data["status"]== 200){
@@ -23,7 +23,7 @@ function getProducts(view){
 		
 	},'json') .fail(function(e) {
 		
-		showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".icon-back").trigger("tapend")});
+		showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".imglogo").trigger("tapend")});
 
 	}).done(function(){$('#products p.title').html((view == 'rules' ? 'My Alerts' : 'Services')+'<i class="fa fa-angle-double-right"></i>Products </p>')});
 }

@@ -28,7 +28,7 @@ function requestService(serviceObj){
 			}
 		
 		},'json') .fail(function(e) {
-			showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".icon-back").trigger("tapend")});
+			showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".imglogo").trigger("tapend")});
 		}).done(function(){});
 	},function(){$('.moldHide, .dialogAlert').hide();});
 }

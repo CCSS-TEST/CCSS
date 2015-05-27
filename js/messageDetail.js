@@ -14,10 +14,7 @@ function matchColumnsHeight(){
 }
 
 function showMessage(id){
-	//For old Androids
-	//$(".details_").css({"width" : (window.innerWidth - window.innerWidth*2*0.04)});
-	//$(".detail_fixed").css({"margin-left" : "0px"});
-	
+		scrollPosition = window.pageYOffset;
 	//Message Handle
 	var msg = $("#"+id+".Message");
 	//If the content if HTML show htmlMSG
@@ -142,7 +139,7 @@ function showMessage(id){
 		console.log(tmp_hist.length);
 		for(var i = 0; i < tmp_hist.length ; i++){
 			tmp_history = tmp_hist[i].split('^');
-			strHistory = strHistory + "<div class='detailsList'><h4>"+tmp_history[0]+"</h4><p>"+tmp_history[1]+"</p><p>"+tmp_history[2]+"</p></div>"
+			strHistory = strHistory + "<div class='detailsList'><h4>"+tmp_history[0]+"</h4><p>"+tmp_history[1]+"</p><br style='font-size:30px;'><p>"+tmp_history[2]+"</p></div>"
 		};
 		$('.historye').html(strHistory);
 		$('#showHistory').show();

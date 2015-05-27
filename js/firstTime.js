@@ -24,7 +24,7 @@ $('#first-time .btnFull').tapend(function(){
 				
 				if( patt.test($('#first-time input[type="tel"]').eq(0).val())){
 					if($("#first-time .weeksOption input:checked").length == 1){
-						$.post('http://'+IP+':8089/appriz/createNewUser',{
+						$.post('http://'+IP+':8089/appriz/createNewUser_',{
 							email 		: $('#first-time input[type="email"]').eq(0).val(),
 							password	: $('#first-time input[type="password"]').eq(0).val(),
 							retention   : parseInt($("#first-time .weeksOption input:checked").val()),//parseInt($('.unikOptions .active').attr('weeks')),
@@ -72,9 +72,15 @@ $('#first-time .btnFull').tapend(function(){
 
 
 function checkWithOutEntity(){
-	if($("#entities ul li").length ==0){
+	//if($("#entities ul li").length ==0){
+	//	console.log("entidades id : "+entityIDs);
+
+		
+		
+		//if($.inArray(currentEntityID, entityIDs)==-1){
+			if(entityIDs.length==0 ){
 			$('.moldHide, .dialogAlert , .icon-back').hide();
-			$("#entities .newEntity").trigger("tapend");
+			$("#info .newEntity").trigger("tapend");
 			$('.icon-menu').hide();
 			$('.out').css({"visibility" : "visible"});
 			$('#Suscri').show();

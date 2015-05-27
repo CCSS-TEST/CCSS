@@ -5,17 +5,12 @@
 		
 */
 
-
-
-
-
 function login(){
-	  //event.preventDefault();
 	  var patFemail = /(\S+)@/;
 	  try{
 	  var logAs = $('.loginBox input').eq(0).val().match(patFemail)[1];
 	  
-		$.post('http://'+IP+':8089/appriz/login',{
+		$.post('http://'+IP+':8089/appriz/login_',{
 			"email" : $('.loginBox input').eq(0).val(),
 			"password":$('.loginBox input').eq(1).val(),
 			"phone": typeof device !== 'undefined' ? device.model : "Browser",
@@ -29,21 +24,19 @@ function login(){
 				$("div#appHolder").show();
 				$('.wConteiner div').hide();
 				idScretClient = data["idSecretClient"];
-				logId = data["idSession"]; // cambio de segreda
+				logId = data["idSession"]; 
 				console.log("LogID: " +logId);
 				$.jStorage.set('idSecretClient', data['idSecretClient']);
 				$.jStorage.set('pin', data['pin']);
 				$.jStorage.set('logAs', logAs);
 				$('.user div').html($.jStorage.get('logAs'));
 				reloadEntities();
-				
-				//$("div#login").fadeOut(1000,function(){checkWithOutEntity()});
 				callNewMSG();
 				pin = data['pin'];
 				atWifi = data["onlyWIFI"];
 				retention =  data["retention"];
-				//getValidTimePeriods();
-				//reloadEntities();
+				
+				
 			
 			}else{
 				showInfoD($.t('Wrong credentials'),$.t('The credentials that you use are invalid'),function(){$('.moldHide, .dialogAlert').hide();});
@@ -65,27 +58,27 @@ function login(){
 
 
 function offLineMode(){
-	console.log("offMode");
+	
+	console.log("off mode");
 			if($.jStorage.index().indexOf('idSecretClient') > -1){
 			idScretClient = $.jStorage.get('idSecretClient');
 			$("#login").hide();
 			$("#appHolder").show();
 			if($.jStorage.index().indexOf('msg') > -1){$('#categories').html(atob($.jStorage.get('msg')));}
-			if($.jStorage.index().indexOf('entities') > -1){$('#entities ul').html(atob($.jStorage.get('entities')));}
-			if($.jStorage.index().indexOf('currentEntityID') > -1){currentEntityID = $.jStorage.get('currentEntityID');}
 			if($.jStorage.index().indexOf('onlyWIFI') > -1){atWifi = $.jStorage.get('onlyWIFI');} else{ atWifi =1}
 			if($.jStorage.index().indexOf('retention') > -1){retention = $.jStorage.get('retention');}else{ retention =4}
 			$('.user div').html($.jStorage.get('logAs'));
-			current_inbox();
+			currentEntityID = $.jStorage.get('currentEntityID');
+			current_inbox_off();
 			counterByMsg();
 			makeSwipe();
-			makeSwipeEntity();
-			currentEntityID = $.jStorage.get('currentEntityID');
-			loadEntityTemplate();
-			$("div#appHolder").show();
+     		$("div#appHolder").show();
 			$('.wConteiner div').hide();
-				$("div#login").fadeOut(1000,function(){checkWithOutEntity()});
-				
+			$("div#login").fadeOut(1000,function(){console.log("offMode");});
+	//	$('#mainOptions :button').prop('disabled', true);
+//$("#mainOptionsUL li").hide();
+
+
 			
 			showInfoD($.t("Offline Mode"),$.t("some features are not enabled in this mode"),function(){});
 		}
@@ -95,12 +88,8 @@ function offLineMode(){
 
 function checkPreviusLogin(){
 	
-	console.log($.jStorage.index().indexOf('currentEntityID'));
-	
-	
 	if($.jStorage.index().indexOf('msg') > -1){$('#categories').html(atob($.jStorage.get('msg')));}
 	setTimeout(function(){$('#Waiting p').show();},3000);
-	currentEntityID  = ($.jStorage.index().indexOf('currentEntityID') > -1  ) ? $.jStorage.get('currentEntityID') : 0;
 	$.post('http://'+IP+':8089/appriz/getCurrentSession',{uuid:  typeof device !== 'undefined' ? device.uuid : "Browser" },function(data) {
 	if("idSecretClient" in data ){
 			//	navigator.splashscreen.hide();
@@ -118,9 +107,7 @@ function checkPreviusLogin(){
 				$.jStorage.set('retention', data['retention']);
 				$.jStorage.set('onlyWIFI', data['onlyWIFI']);
 				$('.user div').html($.jStorage.get('logAs'));
-				currentEntityID = $.jStorage.get('currentEntityID');
-				//loadEntityTemplate();
-				$('.splash').fadeOut(1000,function(){});
+				$('.splash').fadeOut(1000,function(){console.log("chekPrevious");});
 				reloadEntities();
 				
 				loadEntityTemplate(); 
@@ -132,8 +119,6 @@ function checkPreviusLogin(){
 					$('#categories').hide();
 					$('#ads').hide();
 					$('.categoryNav').hide();
-					
-				//	$('.fullWrapper').hide();
 					$('.icon-menu').hide();
 					
 				}
@@ -205,7 +190,8 @@ function resetPass(){
 	var p = genPass();
 	var inputText = $('#inputResetPass').eq(0).val();
 	
-	$.post('http://'+IP+':8089/appriz/setPassword',{
+	
+	$.post('http://'+IP+':8089/appriz/setPassword_',{
 		email			:   inputText,
 		password   			: p
 	}, function(data){

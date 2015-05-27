@@ -81,6 +81,13 @@
 				});
 				
 			}
+			//if(back.length==1 && JSON.stringify(back)=='["inbox"]'){
+				if(scrollPosition>0){
+				$("html, body").animate({ scrollTop: scrollPosition });
+				scrollPosition=0;
+				}
+				
+			
 			console.log(JSON.stringify(back));
 		var inBack = back.pop();
 		$('#pin').hide();
@@ -181,6 +188,7 @@ $("*").tapstart(function(ev){
 	startTap.X = ev.pageX || ev.originalEvent.touches[0].pageX;
 	startTap.Y = ev.pageY || ev.originalEvent.touches[0].pageY;
 	console.log(startTap.X );
+	
 });
 
 $.fn.textWidth = function(text, font) {

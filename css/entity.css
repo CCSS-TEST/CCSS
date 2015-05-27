@@ -1,22 +1,23 @@
 nav.navAppriz ul li.active a, nav.navAppriz ul li a:hover {
-	color : #ED1A2D;
+	color : #0E669D;
 }
 
 
 .bankSection {
-	background: #ED1A2D;
+	background: #FFFFFF;
+	  border-bottom: 2px solid #0078C1;
 }
 
 
 
 .topHeader {
-  background: #ED1A2D;
+  background: #FFFFFF;
 
 }
 
 
 .magicalArrow{
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 #categories li .infoBank h2 {
@@ -24,18 +25,18 @@ nav.navAppriz ul li.active a, nav.navAppriz ul li a:hover {
 }
 
 .unread{
-	color: #ED1A2D;
+	color: #0E669D;
 }
 #categories li .icon-arrow .path1::before {
-	color : #ED1A2D;
+	color : #0E669D;
 }
 
 #categories li .icon-myAlerts .path1::before, .icon-notifications, .icon-alerts, .icon-promotions, .icon-services {
-	color : #ED1A2D;
+	color : #0E669D;
 }
 
 .contentMenu ul li button:hover .icon-myAlerts .path1:before {
-   color : #ED1A2D;
+   color : #0E669D;
 }
 
 
@@ -45,32 +46,32 @@ nav.categoryNav {
 }
 
 #entities .newEntity {
-	background: none repeat scroll 0% 0% #ED1A2D;
+	background: none repeat scroll 0% 0% #0E669D;
 }
 
 #categories .details h3, .details_ h3 {
-    color: #ED1A2D;
+    color: #0E669D;
 }
 
 
 
 nav.categoryNav .icon-myAlerts.active .path1:before {
     content: "\e60b";
-    color: #ED1A2D;
+    color: #0E669D;
 
 }
 
 nav.categoryNav span.active:before {
-    color: #ED1A2D;
+    color: #0E669D
 }
 
 
 .options .optionBtn {
-    background: #ED1A2D;
+    background: #0E669D;
 }
 
 .options .btnBank2:hover {
-    background: #ED1A2D;
+    background: #0E669D;
 }
 
 .dropdownOption ul li {
@@ -78,29 +79,29 @@ nav.categoryNav span.active:before {
 }
 
 .oneOption {
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 nav.navAppriz ul li.active a {
-    color: #ED1A2D;
+    color: #0E669D;
 
 }
 
 nav.navAppriz ul li.active a, nav.navAppriz ul li a:hover {
-    color: #ED1A2D;
+    color: #0E669D;
 }
 
 .contentMenu ul li button:hover .icon1 {
-    color: #ED1A2D;
+    color: #0E669D;
 
 }
 
 .products ul li button , .services ul li button{
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 .products h3 {
-    color: #ED1A2D;
+    color: #0E669D;
 }
 
 nav.categoryNav span {
@@ -111,32 +112,32 @@ nav.categoryNav span {
 
 nav.categoryNav span.active{
     content: "\e60b";
-	color: #ED1A2D;
+	color: #0E669D;
     /*color: rgb(85, 185, 73);*/
 }
 
 .editOption li input {
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 .editOption li select{
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 .products ul li button .icon-arrow .path1::before, .services ul li button .icon-arrow .path1::before {
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 .productNav li.active button{
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 .productNav .icon-myAlerts .path1::before {
-	color: #ED1A2D;
+	color: #0E669D;
 }
 
 input.toggle:checked + label::before {
-	 background: #ED1A2D;
+	 background: #0E669D;
 }
 
 .productNav li button{
@@ -147,11 +148,11 @@ input.toggle:checked + label::before {
 
 #colorHandle{
 	display : none;
-	color: ED1A2D;
+	color: 0E669D;
 }
 
-.bankLogo img{
-	margin-top: 15px;
+.bankLogo img{	
+	margin-top: 1px;
 }
 
 

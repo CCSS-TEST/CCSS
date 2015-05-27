@@ -1,5 +1,5 @@
 {
-  "Are you new Appriz User?" : "¿No dispones de una cuenta?",
+  "Are you new CCSS User?" : "¿No dispones de una cuenta?",
   "Login" : "Iniciar Sesión",
   "My Alerts" : "Mis Alertas",
   "Services" : "Servicios",
@@ -39,7 +39,7 @@
   "Wrong PIN" : "PIN Invalido",
   "The PIN that you used is invalid" : "El PIN ingresado no es valido",
   "Sign In" : "Registro",
-  "Which email do you want to bond with this Appriz Account?":"Con cual correo electrónico desea asociar su cuenta",
+  "Which email do you want to bond with this CCSS Account?":"Con cual correo electrónico desea asociar su cuenta",
   "Write a password that it will be used to authenticate this Account?" :"Escriba la contraseña que utilizará para autentificarse",
   "Write a PIN that will be used to unblock the APP": "Escriba el PIN que será utilizado para desbloquear la APP",
   "Email" : "Correo Electrónico",

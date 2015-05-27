@@ -62,13 +62,14 @@ function addRuleChange(idRule,field,value){
 		
 
 function getValidTimePeriods(prd){
-	$.post('http://'+IP+':8089/appriz/getTimePeriods',{"secretKey" : secretKey,"entityId" : parseInt(currentEntityID)},function(data){
+	
+		$.post('http://'+IP+':8089/appriz/getTimePeriods',{"secretKey" : secretKey},function(data){
 		if (data["status"]== 200){
 			SPickerString = timePicker(data["periods"]);
 		}
 		
 	},'json') .fail(function(e) {
-			showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".icon-back").trigger("tapend")});
+			showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".imglogo").trigger("tapend")});
 	}).done(function(){
 		getRules(prd);
 	});
@@ -84,14 +85,15 @@ function processRuleChange(){
 	rulesChanges = {};
 	console.log(JSON.stringify(tmp_ruleChange));
 	
-	$.post('http://'+IP+':8089/appriz/setRulesByProduct',{"idSecretClient": idScretClient,"productName": currentProduct, "rules":tmp_ruleChange, "entityName" : $('#entities li[entityId='+currentEntityID+']').find('img').attr("alt")},function(data){
-			console.log(JSON.stringify(data));
+	
+$.post('http://'+IP+':8089/appriz/setRulesByProduct',{"idSecretClient": idScretClient,"productName": currentProduct, "rules":tmp_ruleChange},function(data){
+	console.log(JSON.stringify(data));
 			if (data["status"]== 200){
 				SPickerString = timePicker(data["periods"]);
 			}
 		
 	},'json') .fail(function(e) {
-		showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".icon-back").trigger("tapend")});
+		showInfoD($.t("Offline Mode"),$.t("This option is disabled in Offline Mode"),function(){back=["inbox","inbox"];$(".imglogo").trigger("tapend")});
 	}).done(function(){});
 	
 	return tmp_ruleChange;

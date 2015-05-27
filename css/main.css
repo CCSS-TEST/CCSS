@@ -490,6 +490,9 @@ body {
     width: 100%;
 
 }
+.fa-power-off{
+background:#0078C1;
+}
 
 a {
     text-decoration: none;
@@ -505,26 +508,26 @@ a {
 }
 
 header.loginHead {
-    background: #9e3f9a; /* Old browsers */
-    background: -moz-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(17%, #9e3f9a), color-stop(17%, #9e3f9a), color-stop(17%, #636466)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* IE10+ */
-    background: linear-gradient(to right, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e3f9a', endColorstr='#636466', GradientType=1); /* IE6-9 */
+    background: #0078C1; /* Old browsers */
+    background: -moz-linear-gradient(left, #0078C1 17%, #0078C1 17%, #636466 17%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(17%, #0078C1), color-stop(17%, #0078C1), color-stop(17%, #636466)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #0078C1 17%, #0078C1 17%, #636466 17%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #0078C1 17%, #0078C1 17%, #636466 17%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #0078C1 17%, #0078C1 17%, #636466 17%); /* IE10+ */
+    background: linear-gradient(to right, #0078C1 17%, #0078C1 17%, #636466 17%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078C1', endColorstr='#636466', GradientType=1); /* IE6-9 */
     height: 92px;
 }
 
 header {
-    background: #9e3f9a; /* Old browsers */
-    background: -moz-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(17%, #9e3f9a), color-stop(17%, #9e3f9a), color-stop(17%, #636466)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* IE10+ */
-    background: linear-gradient(to right, #9e3f9a 17%, #9e3f9a 17%, #636466 17%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e3f9a', endColorstr='#636466', GradientType=1); /* IE6-9 */
+    background: #FFFFFF; /* Old browsers */
+    background: -moz-linear-gradient(left, #FFFFFF 17%, #FFFFFF 17%, #636466 17%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(17%, #FFFFFF), color-stop(17%, #FFFFFF), color-stop(17%, #636466)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #FFFFFF 17%, #FFFFFF 17%, #636466 17%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #FFFFFF 17%, #FFFFFF 17%, #636466 17%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #FFFFFF 17%, #FFFFFF 17%, #636466 17%); /* IE10+ */
+    background: linear-gradient(to right, #FFFFFF 17%, #FFFFFF 17%, #636466 17%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#636466', GradientType=1); /* IE6-9 */
     height: 92px;
     position: fixed;
     width: 100%;
@@ -532,11 +535,12 @@ header {
     top: 0;
     left: 0;
     right: 0;
+	  border-bottom: 2px solid #0078C1;
 }
 
 header .icon-back {
     display: block;
-    color: #FFFFFF;
+    color: #0078C1;
     font-size: 30px;
     width: 17%;
     float: left;
@@ -566,7 +570,7 @@ header .icon-menu {
 
 .bankSection .icon-menu {
   border: none;
-  color: #FFFFFF;
+  color: #0078C1;
   font-size: 32PX;
   background: none;
   line-height: 76px;
@@ -658,12 +662,12 @@ input, .btnAction {
 }
 
 .btnAction .icon-arrow .path1 {
-    color: #9e3f9a;
+    color: #0078C1;
 }
 
 .btnAction .icon-arrow .path1:before {
     content: "\e614";
-    color: #9e3f9a;
+    color: #0078C1;
 }
 
 .loginBox input {
@@ -688,7 +692,7 @@ input, .btnAction {
 }
 
 .btnFull {
-    background: #9e3f9a;
+    background: #0078C1;
     color: #FFFFFF;
     width: 100%;
     text-transform: uppercase;
@@ -698,7 +702,7 @@ input, .btnAction {
 }
 
 .btnFull:hover {
-    background: #772774;
+    background: gray;
 }
 
 .submitLogin {
@@ -845,9 +849,9 @@ label.css-label {
 
 .numberCode li input {
     background: none;
-    border-bottom: 5px solid #9e3f9a;
+    border-bottom: 5px solid #0078C1;
     font-size: 30px;
-    color: #9e3f9a;
+    color: #0078C1;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -862,7 +866,7 @@ label.css-label {
 }
 
 #keyboardAppriz .numKey, #keyboardAppriz .numKeyC {
-    color: #9e3f9a;
+    color: #0078C1;
     font-size: 3em;
     border: 1px solid #9C9D9E;
     width: 32% !important;
@@ -877,7 +881,7 @@ label.css-label {
 }
 
 #keyboardAppriz .icon-delete {
-    color: #9e3f9a;
+    color: #0078C1;
     font-size: 50px;
     display: block;
 }
@@ -1377,6 +1381,7 @@ nav.categoryNav .icon-myAlerts.active .path2:before {
     overflow: hidden;
     padding: 1% 3% 1% 3%;
     height: 80px;
+	border-bottom: 2px solid #0078C1;	
 }
 
 .topHeader .bankBrand {
@@ -1386,13 +1391,15 @@ nav.categoryNav .icon-myAlerts.active .path2:before {
 }
 
 .topHeader .userInfo {
+
     float: right;
     width: 50%;
     text-align: center;
-    color: white;
+    color: #0078C1;;
 }
 
 .topHeader .userInfo .welcome {
+  color: #0078C1;
     font-weight: 100;
     font-size: 18px;
     margin: 0;
@@ -1406,6 +1413,7 @@ nav.categoryNav .icon-myAlerts.active .path2:before {
 }
 
 .topHeader .userInfo .icon-user {
+  color: #0078C1;
     font-size: 35px;
     display: inline-block;
     padding: 6px 0 0 0;
@@ -1669,12 +1677,12 @@ nav.navAppriz ul li.active a, nav.navAppriz ul li a:hover {
 }
 
 .boxModal .okBtn {
-    background: #9e3f9a;
+    background: #0078C1;
     margin: 0 auto;
 }
 
 .boxModal .yesBtn {
-    background: #9e3f9a;
+    background: #0078C1;
     margin: 0 auto;
 }
 
@@ -2197,6 +2205,7 @@ overflow: auto;
 
     header .icon-back {
         width: 11%;
+		color:#0078C1;
     }
 
     #entities .newEntity {
@@ -2213,6 +2222,7 @@ overflow: auto;
     }
 
     .bankSection .icon-menu {
+	  color: #0078C1;
         font-size: 32px;
         line-height: 91px;
 
@@ -2256,6 +2266,7 @@ overflow: auto;
     }
 
     .loginBox .icon-user, .icon-lock {
+	  
         right: 24px;
     }
 
@@ -2264,6 +2275,7 @@ overflow: auto;
     }
 
     .topHeader .userInfo .user {
+		
         font-size: 12px;
         margin: 6px 0 0 0;
         padding: 0;
@@ -2271,6 +2283,7 @@ overflow: auto;
     }
 
     .topHeader .userInfo {
+	  
         width: 55%;
         overflow: hidden;
     }
@@ -2291,6 +2304,7 @@ overflow: auto;
     }
 
     .log {
+	  
         font-size: 18px !important;
         height: 60px;
         line-height: 60px;
@@ -2430,6 +2444,7 @@ img.bankLogo {
 }
 
 h4.user {
+
     text-overflow: ellipsis !important;
     white-space: nowrap;
     width: 45% !important;
@@ -2493,9 +2508,11 @@ h4.user {
 
 .noMessages{
 color: #636466;
-  font-size: 1.17em;
- text-align:center;
- 
+font-size: 1.17em;
+text-align:center;
+margin-top:13%;
+
+
 
 }
 .appends {
@@ -2713,7 +2730,7 @@ transition: .25s ease-in-out;
 
 input.toggleSetting:checked + label:before {
 width: 60px;
-background: #9E3F9A;
+background: #0078C1;
 }
 
 input.toggleSetting:checked + label:after {

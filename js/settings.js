@@ -33,7 +33,7 @@ function valorSet(){
 function compararSett(p,w,c){
 	var setActual = p+w+c;
 	if(setActual!=stringSett){
-		showAlert($.t("Save changes"),$.t("Do you want to save the changes?"),function(){
+		showAlert($.t("Guardar cambios"),$.t("Desea guardar los cambios realizados"),function(){
 		guardarCambios();
 	},function(){$('.moldHide, .dialogAlert').hide();});
 	}
@@ -60,7 +60,7 @@ $('#passwordChg .btnFull').tapend(function(){
 		password   			: $('#passwordChg input[type="password"]').eq(0).val()
 	}, function(data){
 		showInfoD($.t('Change password'),$.t('The password was changed!'),function(){$('.moldHide, .dialogAlert').hide(); });
-		$('.icon-back').trigger('tapend');
+		$('.imglogo').trigger('tapend');
 	});
 	
 	}
@@ -81,7 +81,7 @@ $('#pinChg .btnFull').tapend(function(){
 		pin   			: $('#pinChg input[type="tel"]').eq(0).val()
 	}, function(data){
 		showInfoD($.t('Change pin'),$.t('The pin was changed!'),function(){$('.moldHide, .dialogAlert').hide(); pin = $('#pinChg input[type="tel"]').eq(0).val()});
-		$('.icon-back').trigger('tapend');
+		$('.imglogo').trigger('tapend');
 	});
 	}else{
 		showInfoD($.t('Wrong PIN'),$.t('PIN must be of fourth digits'),function(){$('.moldHide, .dialogAlert').hide();});

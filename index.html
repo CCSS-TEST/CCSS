@@ -51,7 +51,7 @@
                         </div>
                         <button class="btnFull submitLogin" i18Trans="Login"></button>
 						<a class="newUserlink" i18Trans="Forgot my password" page-content="reset-pass"></a>
-                        <a class="newUserlink" i18Trans="Are you new Appriz User?" page-content="first-time"></a>
+                        <a class="newUserlink" i18Trans="Are you new CCSS User?" page-content="first-time"></a>
                     </fieldset>
                 </formo>
                 </div><!--close login-->
@@ -77,7 +77,7 @@
 
         <ul class="topHeader">
             <li class="bankBrand" >
-                <a page-content="inbox"><img  class= "imglogo" src="img/bac.png" alt=""/></a>
+                <a page-content="inbox"><img  class= "imglogo" src="img/headImage.png" alt=""/></a>
             </li>
             <li class="userInfo">
                 <p class="welcome" i18Trans="Welcome"></p>
@@ -93,17 +93,18 @@
                 <li class="active">
                     <a menu-page="#mainOptions" class="icon-menu"></a>
                 </li>
-                <li>
-                    <a menu-page="#entities" class="icon-entities px5"></a>
-                </li>
-                <li page-content="settingsPage">
+				  <li page-content="settingsPage">
                     <a class="icon-settings px5" ></a>
                 </li>
+                <li>
+                    <a menu-page="#info" class="fa fa-question px5"></a>
+                </li>
+              
             </ul>
         </nav>
         <!--close navAppriz-->
         <div id="mainOptions" class="contentMenu">
-            <ul>
+            <ul id="mainOptionsUL">
                 <li>
                     <button page-content="products" products="rules"><span class="icon1 icon-myAlerts"><span class="path1"></span><span
                             class="path2"></span></span><text i18Trans="My Alerts"/>
@@ -121,9 +122,22 @@
             </ul>
         </div>
 <!--close content menu-->
-        <div id="entities" class="contentMenu" style="display: none">
-            <ul></ul>
-            <button class="newEntity" page-content="suscribe" i18Trans="New Entity"></button>
+        <div id="info" class="contentMenu" style="display: none">
+           <ul>
+                <li>
+                    <button page-content="help" ><span class="icon1 fa fa-question-circle px5"><span class="path1"></span><span
+                            class="path2"></span></span><text i18Trans="Help"/>
+                    </button>
+                </li>
+                <li>
+                    <button page-content="faqs" ><span class="icon1 fa fa-cogs"></span><text i18Trans="FAQ"/></button>
+                </li>
+             
+                <li>
+                    <button page-content="about"><span class="icon1 fa fa-info"></span><text i18Trans="About"/></button>
+                </li>
+            </ul>
+            <button class="newEntity" page-content="suscribe" i18Trans="New Entity" style="visibility:hidden"></button>
         </div>
         <!--close content menu-->
         <button class="log"><span class="icon-logOut"></span><text i18Trans="Log Out"/></button>
@@ -133,7 +147,7 @@
 
 <!--headers-->
 	<header class="bankSection mainBankSection active" id="headerMain" >
-        <h2><a class="bankLogo" href="#"><img src="img/bac.png" alt="Bank"/></a></h2>
+        <h2><a class="bankLogo" href="#"><img src="img/headImage.png" alt="Bank"/></a></h2>
         <button class="icon-menu menu-main"></button>
     </header>
 	<header id="headerGeneral">
@@ -155,7 +169,7 @@
 	 
 	  <header class="bankSection" id="headerEntity" >
                 <a class="icon-back"></a>
-                <h2><a class="bankLogo" href="#" page-content="inbox"><img src="img/bac.png" alt="Bank"/></a></h2>
+                <h2><a class="bankLogo" href="#" page-content="inbox"><img src="img/headImage.png" alt="Bank"/></a></h2>
                 <span class="icon-menu"></span>
      </header>
 <!--headers-->
@@ -164,9 +178,8 @@
 	<div  id='inbox' class='page-content active' header='headerMain'>
 		<section >
 			<ul id="categories" class="noselect">
-			
 			</ul>
-			<p class='noMessages' i18Trans="No messages to display"></p>
+				<p class='noMessages'  i18Trans="No messages to display"></p> 
 			<!--close categories-->
 		</section>
 		<!--close main-->
@@ -310,10 +323,26 @@
        
 </div>
 
+<div  id='help' class='page-content' header='headerGeneral'>
+<div class="settings">
+                    <h1 i18Trans="Help page"></h1>
+				
+                </div><!--close settings-->
+</div>
 
+<div  id='faqs' class='page-content' header='headerGeneral'>
+<div class="settings">
+                    <h1 i18Trans="FAQs page"></h1>
+				
+                </div><!--close settings-->
+</div>
 
-
-
+<div  id='about' class='page-content' header='headerGeneral'>
+<div class="settings">
+                    <h1 i18Trans="About page"></h1>
+				
+                </div><!--close settings-->
+</div>
 
 
 <div  id='services' class='page-content' header='headerEntity'>
@@ -333,7 +362,7 @@
  <section id="main" class="productsMain">
                 <nav class="productNav">
                     <ul>
-                        <li><button disabled><span class="icon-myAlerts"><span class="path1"></span><span class="path2"></span></span><text i18Trans="My Alerts" ></text></button></li>
+                        <li ><button disabled><span class="icon-myAlerts"><span class="path1"></span><span class="path2"></span></span><text i18Trans="My Alerts" ></text></button></li>
                         <li class="active"><button disabled></button></li>
                     </ul>
 
@@ -347,7 +376,7 @@
 </div>
 <div  id='first-time' class='page-content' header='headerGeneral' headerText="Sign In">
 <div class="settings">
-                    <h3 i18Trans="Which email do you want to bond with this Appriz Account?"></h3>
+                    <h3 i18Trans="Which email do you want to bond with this CCSS Account?"></h3>
 
                     <input type="email" i18Trans="Email" i18Target="placeholder"/>
 
@@ -408,6 +437,9 @@
 
                 </div><!--close settings-->
 </div>
+
+
+
 
 <div  id='passwordChg' class='page-content' header='headerGeneral'>
 <div class="settings">

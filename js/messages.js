@@ -4,6 +4,9 @@
 
 
 function current_inbox(){
+	
+	
+	
 	$('.Message').hide();
 	$('.gotcolors').animate({opacity: 1}, 200);
 	$('.entity'+currentEntityID).show();
@@ -19,6 +22,10 @@ function current_inbox(){
 	$('.allMenu').css({"right" : "-80%"});
 	$('.navAppriz li').eq(0).trigger("tapend");
 	
+	if($('.entity'+currentEntityID).length ==0){$('.noMessages').show();}
+			else{$('.noMessages').hide();}
+
+	
 	checkWithOutEntity();
 	if(currentEntityID>0)
 	{
@@ -26,7 +33,28 @@ function current_inbox(){
 	} //----> ERROR
 	
 }
+function current_inbox_off(){
+	
+	
+	$('.Message').hide();
+	$('.gotcolors').animate({opacity: 1}, 200);
+	$('.entity'+currentEntityID).show();
+	$('nav.categoryNav li').find("span").css("color") == tabSelectedColor;	
 
+	$(".page-content.active").removeClass("active");
+	$("header.active").removeClass("active");
+	$("#inbox").addClass("active").show();
+	$("#headerMain").addClass("active").show();
+	Back = ["inbox"];
+	
+	$('#menuAppriz').fadeOut(300);
+	$('.allMenu').css({"right" : "-80%"});
+	$('.navAppriz li').eq(0).trigger("tapend");	
+
+		if($('.entity'+currentEntityID).length ==0){$('.noMessages').show();}
+		else{$('.noMessages').hide();}
+		
+}
 function counterByMsg(){
 		$('.bubble').eq(0).html( $('.typemsg1.unread.entity'+currentEntityID).length == 0 ? "" : $('.typemsg1.unread.entity'+currentEntityID).length).css($('.typemsg1.unread.entity'+currentEntityID).length == 0 ? {"display" : "none" } : {"display" : "block"});
 		$('.bubble').eq(1).html( $('.typemsg2.unread.entity'+currentEntityID).length == 0 ? "" : $('.typemsg2.unread.entity'+currentEntityID).length).css($('.typemsg2.unread.entity'+currentEntityID).length == 0 ? {"display" : "none" } : {"display" : "block"});
@@ -34,10 +62,7 @@ function counterByMsg(){
 		$('.bubble').eq(3).html( $('.typemsg4.unread.entity'+currentEntityID).length == 0 ? "" : $('.typemsg4.unread.entity'+currentEntityID).length).css($('.typemsg4.unread.entity'+currentEntityID).length == 0 ? {"display" : "none" } : {"display" : "block"});
 		$('.bubble').eq(4).html( $('.typemsg5.unread.entity'+currentEntityID).length == 0 ? "" : $('.typemsg5.unread.entity'+currentEntityID).length).css($('.typemsg5.unread.entity'+currentEntityID).length == 0 ? {"display" : "none" } : {"display" : "block"});
 	
-//	$('#leftMenu li').eq(0).find('div div').html($('.unread.entity'+currentEntityID).length);
-		//$('#leftMenu li').eq(4).find('div div').html($('.unread').length);
-		
-		
+
 		$("#entities li").each(function(index, entityI ){
 			var bn = $(this).find('.bubble2')
 			bn.html($('.unread.entity'+$(this).attr('entityId')).length == 0 ? "" : $('.unread.entity'+$(this).attr('entityId')).length);
@@ -54,7 +79,6 @@ function reportMsgState(){
 			
 			$('.Message').each(function( index ) {
 				report["m"+$(this).attr("id")] = $(this).hasClass("unread") ? "unread" : "readed"; 
-				//console.log($(this).attr("id"));
 				if($(this).hasAttr('read')){
 					var msgS = $(this).attr('read').split(',');
 					for(var i = 0 ; i < msgS.length ; i++){
@@ -70,14 +94,13 @@ function reportMsgState(){
 				}
 				
 			});
-			//console.log(JSON.stringify(report));
+			
 			$.post('http://'+IP+':8089/appriz/setMessageStatus', {"idSecretClient": idScretClient, msgStatus:report }, function(data){
-				//console.log(JSON.stringify(data));
+				
 			});
 }		
 
 function syncronizeOffLineMsg(){
-	console.log("sincroOff");
 	if(stateChangeLst.length > 0){
 		while( stateChangeLst.length > 0){
 			var msg = stateChangeLst.pop();
@@ -95,7 +118,7 @@ function makeSwipe(id){
 		
 			$( 1 ? ".Message" : "#"+id+".message").swipe( {
 				
-				//Generic swipe handler for all directions
+				
 				swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 					
 					var mContainer = $(this).find(".moveContainer");
@@ -182,6 +205,7 @@ function makeSwipe(id){
 				
 //bring message for this client
 		function callNewMSG(){
+			
 			$('.icon-menu').show();
 					$('.icon-back').show();
 	
@@ -234,6 +258,7 @@ function makeSwipe(id){
 					
 					}else{ 
 					 try{
+						 
 						var Icon = message['type'] == 1 ? '<span class="icon-myAlerts"><span class="path1"></span><span class="path2"></span></span>'  : message['type'] == 2 ? '<span class="icon-alerts path1"></span>' : message['type'] == 3 ? '<span class="icon-notifications"></span>' :  message['type'] == 4 ?  '<span class="icon-promotions"></span>' : '<span class="icon-services"></span>';
 						var dotState =  message['bulb'] == 1   ? 'dotDone' : message['bulb'] == 2   ? 'dotProgress' : message['bulb'] == 3   ? 'dotError' :  'dotNone';
 						
@@ -249,6 +274,7 @@ function makeSwipe(id){
 						console.timeEnd("MSGProc");
 						$.jStorage.set('msg_div', btoa($('#categories').html()));
 						
+						
 						//console.log(JSON.stringify(data));
 					}catch(e){console.log(e);}
 					}
@@ -261,9 +287,12 @@ function makeSwipe(id){
 				syncronizeOffLineMsg();
 			},'json') .fail(function(e) {
 					$('.refreshing_list').css({"background-color" : "#888"}).html('Conexion error!').fadeOut(3000,function(){$('.refreshing_list').css({"background-color" : "#F5F5Ff"}).html('Refreshing list');});
+		
 			
 				//alert( JSON.stringify(e));getRules(kilomanyaroB)
 			}).done(function(){ 
+			
+		
 				current_inbox();
 				counterByMsg();
 				makeSwipe();
@@ -301,7 +330,8 @@ $('#categories').html("<div class='scrollingArrow'><i class='fa fa-angle-double-
 				//console.log(JSON.stringify(data));
 				
 				$.each(data,function(index, message){
-					if($('#'+message['idMessage']).length > 0){ 
+					if($('#'+message['idMessage']).length > 0){
+						
 						makeSwipe(message['idMessage']);
 						if(message['state'] == 3){
 							$('#'+message['idMessage']).removeClass('unread')
@@ -356,6 +386,7 @@ $('#categories').html("<div class='scrollingArrow'><i class='fa fa-angle-double-
 					}
 					
 					$.jStorage.set('msg_div', btoa($('#categories').html()));
+					
 				});
 				syncronizeOffLineMsg();
 			},'json') .fail(function(e) {
@@ -363,6 +394,7 @@ $('#categories').html("<div class='scrollingArrow'><i class='fa fa-angle-double-
 			
 				//alert( JSON.stringify(e));getRules(kilomanyaroB)
 			}).done(function(){ 
+
 				current_inbox();
 				counterByMsg();
 				makeSwipe();
@@ -391,6 +423,7 @@ $('#categories').html("<div class='scrollingArrow'><i class='fa fa-angle-double-
 				
 		//Filter handle
 		$( document ).on("tapend",'nav.categoryNav li',function(){
+			
 			if( $(this).find("span").hasClass("active")){
 				$(this).find("span").removeClass("active");
 				$('.typemsg'+$(this).attr("typemsg")).hide();
@@ -399,6 +432,7 @@ $('#categories').html("<div class='scrollingArrow'><i class='fa fa-angle-double-
 				$('.typemsg'+$(this).attr("typemsg")+'[identity='+currentEntityID+']').show();
 			}
 			$("*").scrollTop(0);
+			
 		});
 		
 		$( document ).on("taphold",'nav.categoryNav li',function(){
@@ -420,7 +454,7 @@ StartXCategories = 0;
 		
 	scrollEvent =  function(evt)
 	{
-
+	//console.log("scroll top: "+window.pageYOffset);
 		margintop = 103;
 		$("#deleteAllBtn").hide();
 		$(".deleteOptionActivate").animate({"margin-left" : "0px"});
@@ -451,7 +485,8 @@ StartXCategories = 0;
 							//console.log("deltaX: " + ( getCoord(ev,"X") - StartXCategories ) +"  -- " +"deltaY: " + (getCoord(ev,"Y") -StartYCategories)  );
 							if(margintop == 103){}
 							if(margintop< 150){
-								margintop++;
+								margintop
+								//console.log("MARGIN TOP"+margintop);
 								$(".scrollingArrow").show();
 								$("#categories").css({"margin-top" : margintop+"px"});
 							}
@@ -470,11 +505,6 @@ StartXCategories = 0;
 				{
 					if( $(".page-content.active").attr("id") == "inbox" && ($(this).scrollTop() <3 )){
 						ev.preventDefault();
-						
-						//$('#appHolder').parent().parent().parent().unbind();
-						//$('#appHolder').parent().parent().parent().on('scroll', scrollEvent);
-						
-						//$("*").scrollTop(2);
 						$(".scrollingArrow").hide();
 						
 						if(margintop < 120 ){
@@ -482,7 +512,13 @@ StartXCategories = 0;
 						}else{
 							$("#categories").css({"margin-top" : "103px"});
 							callNewMSG();
+								if(entityIDs.length<1){
+									entityIDs.push(currentEntityID);
+									}
 							current_inbox();
+							
+								
+							
 						}
 						margintop =103;
 						$("#categories").css({"margin-top" : "103px"});
