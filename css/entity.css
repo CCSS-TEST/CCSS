@@ -151,8 +151,9 @@ input.toggle:checked + label::before {
 	color: 0E669D;
 }
 
-.bankLogo img{	
-	margin-top: 1px;
+.bankLogo img {
+  margin-top: 6%;
+  margin-left: 15%;
 }
 
 

@@ -582,8 +582,9 @@ header .icon-menu {
 	 margin-top: 5px !important;
 }
 
-.imglogo{
-	max-height:80px !important;
+.imglogo {
+  max-height: 80px !important;
+  margin-top: 13%;
 }
 
 img {
