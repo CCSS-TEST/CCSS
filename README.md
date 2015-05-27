@@ -53,7 +53,7 @@ When you have made changes over your local files (cloned project) and want to sy
  That command shows you the files that were changed
 
  3. Add the changes whit the command
-	<pre>$ git add –all</pre>
+	<pre>$ git add -–all</pre>
 	
  4. Confirm your changes with: 
 	<pre>$ git commit –m “message”</pre>
