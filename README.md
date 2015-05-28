@@ -37,7 +37,7 @@ Right now, you have a fork of the FOE repository, but you don't have the files i
      
  3. 3. Open Terminal and go to the folder that you want to save the files
  4.   Type git clone and then paste the URL you copied in Step 2. It will look like this
-<pre>$ git clone https://github.com/YOUR-USERNAME/FOE</pre>
+<pre>$ git clone https://github.com/YOUR-USERNAME/REPO-NAME</pre>
  5.  Press Enter. Your local clone will be created 
 
 
@@ -60,8 +60,8 @@ When you have made changes over your local files (cloned project) and want to sy
 	
 	
  5. At this point, your changes were realized in your local computer. To make the changes effective in the fork you need to type: 
- 6. <pre>$ git remote add origin https://github.com/{USERNAME}/FOE.git</pre>
- 7. <pre>$ git pull origin master</pre>
+ 6. <pre>$ git push</pre>
+
 
 
 ----------
