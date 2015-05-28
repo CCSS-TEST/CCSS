@@ -43,7 +43,7 @@ Right now, you have a fork of the FOE repository, but you don't have the files i
 
 ----------
 
-####**Make changes, commit and pull**
+####**Make changes, commit and push**
 
 When you have made changes over your local files (cloned project) and want to synchronize your local folder with the fork must follow these steps:
 
@@ -81,6 +81,8 @@ Sync a fork of a repository to keep it up-to-date with the upstream repository.
  6. Check out your fork's local master branch
 	<pre>$ git checkout master</pre>
  7. Merge the changes from upstream/master into your local master branch
-	<pre>$git merge upstream/master</pre>
+ 	<pre>$git merge upstream/master</pre>
+ 8. Repeat the step : **Make changes, commit and push** to update the repository on github
+	
 
 			
