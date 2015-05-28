@@ -60,8 +60,8 @@ When you have made changes over your local files (cloned project) and want to sy
 	
 	
  5. At this point, your changes were realized in your local computer. To make the changes effective in the fork you need to type: 
- 6. <pre>$ git remote add origin https://github.com/{USERNAME}/FOE.git</pre>
- 7. <pre>$ git pull origin master</pre>
+ 6. <pre>$ git push</pre>
+
 
 
 ----------
