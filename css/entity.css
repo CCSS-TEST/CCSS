@@ -152,7 +152,7 @@ input.toggle:checked + label::before {
 }
 
 .bankLogo img {
-  margin-top: 1px;
+  margin-top: 2px;
  
 }
 
